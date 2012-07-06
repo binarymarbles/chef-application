@@ -144,8 +144,6 @@ def run_deploy(force = false)
           provider.instance_eval(&cmd)
         elsif cmd && !cmd.empty?
           execute cmd do
-            user new_resource.owner
-            group new_resource.group
             environment all_environments
           end
         end
